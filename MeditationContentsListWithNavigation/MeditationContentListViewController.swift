@@ -11,7 +11,7 @@ enum Section {
     case main
 }
 
-class ViewController: UIViewController {
+class MeditationContentListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var changeModeButton: UIButton!
     
