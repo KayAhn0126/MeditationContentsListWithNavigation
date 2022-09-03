@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MeditationContentListViewController: UIViewController {
     enum Section {
         case main
     }
@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.delegate = self
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MeditationCollectionViewCell", for: indexPath) as? MeditationCollectionViewCell else {
                 return nil
@@ -72,5 +73,17 @@ class ViewController: UIViewController {
         snapshot.appendItems(items, toSection: .main)
         dataSource.apply(snapshot)
         buttonUpdate()
+    }
+}
+
+extension MeditationContentListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = items[indexPath.item]
+        print(">>> \(item.title)")
+        
+        let storyboard = UIStoryboard(name: "QuickFocus", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "QuickFocusListViewController") as! QuickFocusListViewController
+        vc.title = item.title
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

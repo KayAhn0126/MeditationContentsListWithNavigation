@@ -11,6 +11,7 @@
 		6A1CB7BA28C366B100B1CD48 /* QuickFocusListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1CB7B928C366B100B1CD48 /* QuickFocusListViewController.swift */; };
 		6A1CB7BC28C36C8400B1CD48 /* QuickFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1CB7BB28C36C8400B1CD48 /* QuickFocus.swift */; };
 		6A1CB7BE28C372D200B1CD48 /* QuickFocusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1CB7BD28C372D200B1CD48 /* QuickFocusCollectionViewCell.swift */; };
+		6A1CB7C028C38B1400B1CD48 /* QuickFocusCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1CB7BF28C38B1400B1CD48 /* QuickFocusCollectionReusableView.swift */; };
 		6A6B9DA728BB78FD00B0A19F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B9DA628BB78FD00B0A19F /* AppDelegate.swift */; };
 		6A6B9DA928BB78FD00B0A19F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B9DA828BB78FD00B0A19F /* SceneDelegate.swift */; };
 		6A6B9DAB28BB78FD00B0A19F /* MeditationContentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B9DAA28BB78FD00B0A19F /* MeditationContentListViewController.swift */; };
@@ -26,6 +27,7 @@
 		6A1CB7B928C366B100B1CD48 /* QuickFocusListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickFocusListViewController.swift; sourceTree = "<group>"; };
 		6A1CB7BB28C36C8400B1CD48 /* QuickFocus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickFocus.swift; sourceTree = "<group>"; };
 		6A1CB7BD28C372D200B1CD48 /* QuickFocusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickFocusCollectionViewCell.swift; sourceTree = "<group>"; };
+		6A1CB7BF28C38B1400B1CD48 /* QuickFocusCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickFocusCollectionReusableView.swift; sourceTree = "<group>"; };
 		6A6B9DA328BB78FD00B0A19F /* MeditationContentsListWithNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationContentsListWithNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A6B9DA628BB78FD00B0A19F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A6B9DA828BB78FD00B0A19F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,8 +72,8 @@
 			children = (
 				6A6B9DA628BB78FD00B0A19F /* AppDelegate.swift */,
 				6A6B9DA828BB78FD00B0A19F /* SceneDelegate.swift */,
-				6A6B9DAA28BB78FD00B0A19F /* MeditationContentListViewController.swift */,
 				6A6B9DBA28BB799B00B0A19F /* Meditation.swift */,
+				6A6B9DAA28BB78FD00B0A19F /* MeditationContentListViewController.swift */,
 				6A6B9DBC28BB7E7900B0A19F /* MeditationCollectionViewCell.swift */,
 				6A1CB7BB28C36C8400B1CD48 /* QuickFocus.swift */,
 				6A1CB7B928C366B100B1CD48 /* QuickFocusListViewController.swift */,
@@ -81,6 +83,7 @@
 				6A1CB7B728C3669400B1CD48 /* QuickFocus.storyboard */,
 				6A6B9DAF28BB78FE00B0A19F /* Assets.xcassets */,
 				6A6B9DB428BB78FE00B0A19F /* Info.plist */,
+				6A1CB7BF28C38B1400B1CD48 /* QuickFocusCollectionReusableView.swift */,
 			);
 			path = MeditationContentsListWithNavigation;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				6A6B9DBD28BB7E7900B0A19F /* MeditationCollectionViewCell.swift in Sources */,
 				6A6B9DBB28BB799B00B0A19F /* Meditation.swift in Sources */,
 				6A1CB7BA28C366B100B1CD48 /* QuickFocusListViewController.swift in Sources */,
+				6A1CB7C028C38B1400B1CD48 /* QuickFocusCollectionReusableView.swift in Sources */,
 				6A1CB7BE28C372D200B1CD48 /* QuickFocusCollectionViewCell.swift in Sources */,
 				6A6B9DA728BB78FD00B0A19F /* AppDelegate.swift in Sources */,
 				6A6B9DA928BB78FD00B0A19F /* SceneDelegate.swift in Sources */,

@@ -42,6 +42,15 @@ class QuickFocusListViewController: UIViewController {
             return cell
         })
         
+        dataSource.supplementaryViewProvider = { (collectionView, kind, indexPath) in
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "QuickFocusCollectionReusableView", for: indexPath) as? QuickFocusCollectionReusableView else { return nil }
+            
+            let allSections = Section.allCases
+            let section = allSections[indexPath.section]
+            header.configure(section.title)
+            return header
+        }
+        
         // Data
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         snapshot.appendSections([.breathing, .walking]) // snapshot.appendSections(Section.allCases)로도 사용 가능
@@ -51,7 +60,8 @@ class QuickFocusListViewController: UIViewController {
         
         // Layout
         collectionView.collectionViewLayout = layout()
-        
+        self.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.navigationBar.tintColor = .white
     }
     
     private func layout() -> UICollectionViewCompositionalLayout {
@@ -60,8 +70,15 @@ class QuickFocusListViewController: UIViewController {
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+        group.interItemSpacing = .fixed(10)
         
         let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 30, leading: 20, bottom: 30, trailing: 20)
+        section.interGroupSpacing = 20
+        
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        section.boundarySupplementaryItems = [header]
         
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
