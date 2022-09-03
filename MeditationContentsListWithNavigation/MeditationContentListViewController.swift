@@ -7,11 +7,11 @@
 
 import UIKit
 
-enum Section {
-    case main
-}
-
-class MeditationContentListViewController: UIViewController {
+class ViewController: UIViewController {
+    enum Section {
+        case main
+    }
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var changeModeButton: UIButton!
     
