@@ -136,4 +136,28 @@ let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), hei
 let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
 ```
 
-- https://nsios.tistory.com/150 잘 정리 되어있으니 NSCollectionLayoutBoundarySupplementaryItem에 대해 알아보고 정리하기.
+- NSCollectionLayoutSupplementaryItem이란?
+- **An object used to add an extra visual decoration to an item in a collection view**
+
+- elementKind에는 여러 종류가 있다
+    - 아이템 하나하나에 달 수 있는 badge
+    - 섹션 맨 처음에 보여지는 elementKindSectionHeader
+    - 섹션 맨 마지막에 보여지는 elementKindSectionFooter
+    - elementKindSectionHeader와 elementKindSectionFooter는 현재 구현한것처럼 사용하면 되지만 badge는 다르다! 참고해서 구현하도록!
+
+```swift
+boundarySupplementaryItems
+```
+- Supplementaries associated with the boundary edges of the section.
+
+## 🍎 하나의 컬렉션뷰에 다수의 Section
+- 지금까지 프로젝트 하면서는 하나의 섹션에 모든 아이템을 다 넣었다.
+- 이번 프로젝트에서는 섹션의 갯수를 2개로 만들어 어떤 방식으로 구현하고 어떤 방식으로 보여지는지 알았다.
+- 아래는 QuickFocusListViewController내 섹션의 갯수 설정하는 코드
+```swift
+var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+snapshot.appendSections([.breathing, .walking]) // snapshot.appendSections(Section.allCases)로도 사용 가능
+snapshot.appendItems(breathingList, toSection: .breathing)
+snapshot.appendItems(walkingList, toSection: .walking)
+dataSource.apply(snapshot)
+```
