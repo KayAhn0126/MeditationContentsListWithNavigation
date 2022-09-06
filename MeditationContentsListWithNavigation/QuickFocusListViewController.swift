@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class QuickFocusListViewController: UIViewController {
     
     enum Section: CaseIterable {
