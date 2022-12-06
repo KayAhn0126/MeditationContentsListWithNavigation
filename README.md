@@ -1,11 +1,9 @@
-# MeditationContentListWithNavigation
+# Meditation ContentList With Navigation
 
 ## 🍎 작동 화면
-
 | 작동 화면 |
-|:--------------------------------:|
+| :-: |
 | ![](https://i.imgur.com/dEHBLBM.gif) |
-
 
 ## 🍎 전반적 설명
 - MeditationContentListViewController -> **presentingVC 역할**
@@ -41,9 +39,9 @@ self.navigationItem.largeTitleDisplayMode = .never
 ## 🍎 UICollectionReusableView을 사용해 header 생성하기
 - UICollectionReusableView을 이용해 각 Section의 header를 생성
 
-|          스토리보드 내 위치          |              앱 내 위치              |
-|:------------------------------------:|:------------------------------------:|
-| ![](https://i.imgur.com/eibkfPL.png) | ![](https://i.imgur.com/KoSRkN1.png) |
+| 스토리보드 내 위치 | 앱 내 위치 |
+| :-: | :-: |
+| ![](https://i.imgur.com/xZMoyDY.png) | ![](https://i.imgur.com/6Bb8mGQ.png) |
 
 - 먼저 QuickFocusListViewController의 viewDidLoad()메서드에서 header를 구성하는 코드를 보자.
 ```swift
@@ -138,7 +136,6 @@ let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
 
 - NSCollectionLayoutSupplementaryItem이란?
 - **An object used to add an extra visual decoration to an item in a collection view**
-
 - elementKind에는 여러 종류가 있다
     - 아이템 하나하나에 달 수 있는 badge
     - 섹션 맨 처음에 보여지는 elementKindSectionHeader
@@ -150,7 +147,7 @@ boundarySupplementaryItems
 ```
 - Supplementaries associated with the boundary edges of the section.
 
-## 🍎 하나의 컬렉션뷰에 다수의 Section
+## 🍎 하나의 컬렉션 뷰에 다수의 Section
 - 지금까지 프로젝트 하면서는 하나의 섹션에 모든 아이템을 다 넣었다.
 - 이번 프로젝트에서는 섹션의 갯수를 2개로 만들어 어떤 방식으로 구현하고 어떤 방식으로 보여지는지 알았다.
 - 아래는 QuickFocusListViewController내 섹션의 갯수 설정하는 코드
